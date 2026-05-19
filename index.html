@@ -56,7 +56,11 @@
     .mobile-nav-brand { color:var(--clr-white); font-family:var(--font-heading); font-size:16px; font-weight:700; }
 
     /* HERO */
-    .hero { min-height:100vh; display:flex; align-items:flex-end; padding:0 5% 110px; position:relative; overflow:hidden; background:linear-gradient(180deg,rgba(20,22,23,0.5) 0%,rgba(20,22,23,0.15) 50%,rgba(20,22,23,0.75) 100%), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1800&q=85') center/cover no-repeat; }
+    .hero { min-height:100vh; display:flex; align-items:flex-end; padding:0 5% 110px; position:relative; overflow:hidden; background:var(--clr-dark); }
+    .hero-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; z-index:0; }
+    .hero-overlay { position:absolute; inset:0; background:linear-gradient(180deg,rgba(20,22,23,0.5) 0%,rgba(20,22,23,0.15) 50%,rgba(20,22,23,0.75) 100%); z-index:1; }
+    .hero-content { position:relative; z-index:2; width:100%; }
+    .hero-scroll-hint { z-index:2; }
     .hero-content { width:100%; }
     .hero-badge { display:inline-flex; align-items:center; gap:8px; background:var(--clr-white); border:1px solid var(--clr-border); border-radius:var(--radius-pill); padding:6px 16px; font-size:13px; font-weight:500; color:var(--clr-grey); margin-bottom:24px; letter-spacing:0.01em; }
     .hero-badge .dot { width:8px; height:8px; background:#22c55e; border-radius:50%; animation:pulse 2s infinite; }
@@ -270,6 +274,10 @@
 
 <!-- HERO -->
 <section class="hero" id="home">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto">
+    <source src="Video-807 (online-video-cutter.com).mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-badge reveal">
       <span class="dot"></span>
@@ -381,7 +389,7 @@
   <h2 class="section-title reveal">Your Stay at<br><span class="muted">Manka Farms</span></h2>
   <div class="fh-grid">
     <div class="fh-card reveal">
-      <div class="fh-img-wrap"><img class="fh-img" src="https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=600&q=80" alt="Jungle Farmhouse Room"></div>
+      <div class="fh-img-wrap"><img class="fh-img" src="manka-img1.jpg" alt="Manka Farms Sign"></div>
       <div class="fh-body">
         <div class="fh-tag">Private Farmhouse</div>
         <div class="fh-name">Entire Farmhouse Stay</div>
@@ -391,7 +399,7 @@
       </div>
     </div>
     <div class="fh-card reveal" style="transition-delay:0.1s">
-      <div class="fh-img-wrap"><img class="fh-img" src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&q=80" alt="Jungle Room"></div>
+      <div class="fh-img-wrap"><img class="fh-img" src="manka-img2.jpg" alt="Pench Tiger Reserve"></div>
       <div class="fh-body">
         <div class="fh-tag">Nature Immersion</div>
         <div class="fh-name">Jungle Retreat Experience</div>
@@ -401,7 +409,7 @@
       </div>
     </div>
     <div class="fh-card reveal" style="transition-delay:0.2s">
-      <div class="fh-img-wrap"><img class="fh-img" src="https://images.unsplash.com/photo-1597600159211-d6c104f408d1?w=600&q=80" alt="Group Stay"></div>
+      <div class="fh-img-wrap"><img class="fh-img" src="manka-img3.jpg" alt="Manka Farms Nature Stay"></div>
       <div class="fh-body">
         <div class="fh-tag">Group &amp; Family Stays</div>
         <div class="fh-name">Whole Property Booking</div>
@@ -487,12 +495,14 @@
   <p class="section-label">Testimonials</p>
   <h2 class="section-title reveal">Loved By<br><span class="muted">Our Guests</span></h2>
   <div class="testi-grid">
-    <div class="testi-card reveal"><div class="testi-q">"</div><p class="testi-txt">Manka Farms is truly a hidden gem. Waking up to the sounds of the jungle, sitting by the fire at night — it was the most peaceful getaway our family has ever had.</p><div class="testi-name">Amit Verma</div><div class="testi-loc">Nagpur, Maharashtra</div></div>
-    <div class="testi-card reveal" style="transition-delay:0.08s"><div class="testi-q">"</div><p class="testi-txt">The location is unbeatable — right next to Pench. We spotted deer from the property itself! The caretaker was incredibly helpful with our safari bookings.</p><div class="testi-name">Priya Sharma</div><div class="testi-loc">Jabalpur, M.P.</div></div>
-    <div class="testi-card reveal" style="transition-delay:0.16s"><div class="testi-q">"</div><p class="testi-txt">Four bedrooms, full kitchen, and the most immersive jungle experience. Our group of 10 had an absolute blast. The bonfire nights were unforgettable!</p><div class="testi-name">Ravi Deshmukh</div><div class="testi-loc">Pune, Maharashtra</div></div>
-    <div class="testi-card reveal"><div class="testi-q">"</div><p class="testi-txt">Perfect retreat away from the city. The tribal food the caretaker prepared was delicious, and the jungle walk was breathtaking. Will definitely come back!</p><div class="testi-name">Sunita Patel</div><div class="testi-loc">Indore, M.P.</div></div>
-    <div class="testi-card reveal" style="transition-delay:0.08s"><div class="testi-q">"</div><p class="testi-txt">Best farmstay near Pench! The rooms are comfortable, the surroundings are lush, and the hospitality is warm and genuine. Highly recommend for wildlife enthusiasts.</p><div class="testi-name">Karan Mehta</div><div class="testi-loc">Mumbai</div></div>
-    <div class="testi-card reveal" style="transition-delay:0.16s"><div class="testi-q">"</div><p class="testi-txt">We used it as a remote work retreat — the workspace, peaceful surroundings, and good connectivity made it perfect. A truly rare find on the Nagpur–Jabalpur highway.</p><div class="testi-name">Deepika Joshi</div><div class="testi-loc">Hyderabad</div></div>
+    <div class="testi-card reveal"><div class="testi-q">"</div><p class="testi-txt">Truly wonderful and memorable... spacious, clean, comfortable.</p><div class="testi-name">Renuka Wadhwani</div><div class="testi-loc">4 months ago</div></div>
+    <div class="testi-card reveal" style="transition-delay:0.08s"><div class="testi-q">"</div><p class="testi-txt">A Perfect Getaway... 4 wonderful days.</p><div class="testi-name">Jitender Govindani</div><div class="testi-loc">6 months ago</div></div>
+    <div class="testi-card reveal" style="transition-delay:0.16s"><div class="testi-q">"</div><p class="testi-txt">Wonderful visit... incredibly warm hospitality.</p><div class="testi-name">Shikha Sen</div><div class="testi-loc">4 months ago</div></div>
+    <div class="testi-card reveal"><div class="testi-q">"</div><p class="testi-txt">Good experience with luxurious amenities &amp; delicious food.</p><div class="testi-name">Gaurav Shrivastava</div><div class="testi-loc">2 months ago</div></div>
+    <div class="testi-card reveal" style="transition-delay:0.08s"><div class="testi-q">"</div><p class="testi-txt">Thank u so much for the wonderful weekend and a memorable bday.</p><div class="testi-name">Payal Gawri</div><div class="testi-loc">5 months ago</div></div>
+    <div class="testi-card reveal" style="transition-delay:0.16s"><div class="testi-q">"</div><p class="testi-txt">Second time at Manka... truly unforgettable.</p><div class="testi-name">Vikram Dave</div><div class="testi-loc">6 months ago</div></div>
+    <div class="testi-card reveal"><div class="testi-q">"</div><p class="testi-txt">Luxury farmstay... five unforgettable days among wildlife.</p><div class="testi-name">Aanil Singh</div><div class="testi-loc">6 months ago</div></div>
+    <div class="testi-card reveal" style="transition-delay:0.08s"><div class="testi-q">"</div><p class="testi-txt">Home away from home... heart touching hospitality.</p><div class="testi-name">Jeet C</div><div class="testi-loc">5 months ago</div></div>
   </div>
 </section>
 
